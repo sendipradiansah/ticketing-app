@@ -1,0 +1,49 @@
+services:
+  # 1. DATABASE (Sesuai konfigurasi Anda)
+  db:
+    image: postgres:15
+    container_name: ticketing-postgres
+    restart: always
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password123
+      POSTGRES_DB: db_ticketing
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  # 2. BACKEND (NestJS)
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: ticketing-backend
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      # Koneksi PostgreSQL: postgresql://USER:PASSWORD@HOST:PORT/DATABASE?schema=public
+      # HOST menggunakan nama service database yaitu 'db'
+      DATABASE_URL: "postgresql://admin:password123@db:5432/db_ticketing?schema=public"
+      JWT_SECRET: "secret_token_123" # Sesuaikan dengan secret Anda
+    depends_on:
+      - db
+
+  # 3. FRONTEND (Next.js)
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: ticketing-frontend
+    restart: always
+    # Next.js berjalan di port internal 3000, kita petakan ke 3001 di localhost agar tidak bentrok dengan backend
+    ports:
+      - "3001:3000" 
+    environment:
+      NEXT_PUBLIC_API_URL: "http://localhost:3000"
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:
