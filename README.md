@@ -135,3 +135,48 @@ Jika Anda melakukan perubahan pada baris kode, Anda tidak perlu mematikan Docker
 Update Backend: docker compose up --build -d backend
 
 Update Frontend: docker compose up --build -d frontend
+
+# Akun Testing:
+email: admin@example.com
+password: password
+
+email: user@example.com
+password: password
+
+email: user1@example.com
+password: password
+
+email: user2@example.com
+password: password
+
+email: user3@example.com
+password: password
+
+email: staff@example.com
+password: password
+
+email: staff2@example.com
+password: password
+
+# Fitur yang sudah selesai
+- Authentication
+- Dashboard
+- Ticket Management
+- Ticket List
+- Ticket Detail
+- Comment dan Activity Log
+- Upload attachment berjalan
+- Export tiket ke Excel/PDF
+- Notifikasi sederhana
+- Responsive mobile
+- Dark mode
+- API documentation menggunakan Swagger/OpenAPI
+- Docker setup
+- Seeder data dummy
+- Clean UI dengan reusable component
+- Validasi form yang rapi
+
+# Penggunaan AI tools:
+Saya menggunakan Gemini 3.1 Pro
+Untuk source code saya full menggunakan bantuan AI secara bertahap pengerjaannya berdasarkan fungsi,
+sedangkan saya bertindak sebagai Analyst dan fokus kepada bisnis prosesnya. 
