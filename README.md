@@ -135,7 +135,29 @@ Update Backend: docker compose up --build -d backend
 
 Update Frontend: docker compose up --build -d frontend
 
-# Akun Testing:
+### 🧪 Panduan Pengujian (Testing Guide) ###
+
+Aplikasi ini dilengkapi dengan rangkaian pengujian unit (*Unit Testing*) menggunakan **Jest** untuk memastikan seluruh logika bisnis pada *backend* berjalan dengan benar sebelum masuk ke tahap produksi. 
+
+Semua pengujian dijalankan terisolasi di dalam lingkungan Docker, sehingga Anda tidak perlu menginstal dependensi pengujian secara lokal di komputer Anda.
+
+### 1. Prasyarat (Prerequisites)
+Pastikan kontainer Docker untuk *backend* sudah berjalan dalam mode *detached*. Jika belum, nyalakan menggunakan perintah pada terminal:
+docker compose up -d --build
+
+1. Jika ingin menjalankan seluruh rangkaian pengujian, jalankan perintah ini pada terminal:
+docker exec -it ticketing-backend npm run test
+
+2. Jika ingin menjalankan pengujian spesifik per fitur, jalankan perintah ini pada terminal:
+
+    - Pengujian Autentikasi & Profil (AuthService):
+    docker exec -it ticketing-backend npm run test -- auth.service.spec.ts
+
+    - Pengujian Manajemen Tiket (TicketsService):
+    docker exec -it ticketing-backend npm run test -- tickets.service.spec.ts
+
+
+### Akun Testing: ###
 email: admin@example.com
 password: password
 
@@ -170,6 +192,7 @@ password: password
 - Responsive mobile
 - Dark mode
 - API documentation menggunakan Swagger/OpenAPI
+- Unit test sederhana
 - Docker setup
 - Seeder data dummy
 - Clean UI dengan reusable component
