@@ -38,7 +38,6 @@ ticketing-app/
 ├── docker-compose.yml
 └── README.md
 
-###############################################################################################
 
 ### Tahapan Instalasi Detil (Step-by-Step) ###
 # Langkah 1: Pengambilan Source Code
