@@ -111,7 +111,7 @@ async function main() {
     {
       title: 'Koneksi uplink lantai 3 terputus',
       category: 'Network',
-      priority: 'CRITICAL',
+      priority: 'HIGH',
       status: 'OPEN',
       description: 'Satu divisi kehilangan akses intranet karena router di ruang server C sepertinya mati total.',
       createdById: user.id,
@@ -154,7 +154,7 @@ async function main() {
     {
       title: 'Database Export memicu Force Close',
       category: 'Software',
-      priority: 'CRITICAL',
+      priority: 'MEDIUM',
       status: 'OPEN',
       description: 'Fungsi export report bulanan selalu membuat aplikasi tertutup paksa. Data sangat urgent.',
       createdById: user3.id,

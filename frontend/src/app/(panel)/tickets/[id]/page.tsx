@@ -96,13 +96,17 @@ export default function TicketDetail() {
           <div className={`border rounded-2xl p-6 ${isDark ? 'bg-slate-900/60 border-slate-800' : 'bg-slate-100 border-slate-400'}`}>
             <h3 className="text-xs font-mono text-slate-500 mb-4 uppercase">Ticket Origin</h3>
             <div className="space-y-4 text-sm">
-              <div className="flex flex-col gap-1 border-b pb-3 border-slate-800">
+              <div className={`flex flex-col gap-1 border-b pb-3 ${isDark ? 'border-slate-800' : 'border-slate-300'}`}>
                 <span className="text-xs text-slate-500">Dibuat Oleh</span>
-                <span className="font-medium text-slate-200">{ticket.createdBy?.name}</span>
+                <span className={isDark ? 'font-medium text-slate-200' : 'font-semibold text-slate-900'}>
+                  {ticket.createdBy?.name}
+                </span>
               </div>
               <div className="flex flex-col gap-1">
                 <span className="text-xs text-slate-500">Waktu Dibuat</span>
-                <span className="font-mono text-slate-200">{new Date(ticket.createdAt).toLocaleString('id-ID')}</span>
+                <span className={`font-mono ${isDark ? 'text-slate-200' : 'font-semibold text-slate-900'}`}>
+                  {new Date(ticket.createdAt).toLocaleString('id-ID')}
+                </span>
               </div>
             </div>
           </div>
