@@ -200,5 +200,13 @@ password: password
 
 # Penggunaan AI tools:
 Saya menggunakan Gemini 3.1 Pro
-Untuk source code saya full menggunakan bantuan AI secara bertahap pengerjaannya berdasarkan fungsi,
+Untuk source code project ini full menggunakan bantuan AI dengan cara bertahap pengerjaannya per bagian fungsi,
 sedangkan saya bertindak sebagai Analyst dan fokus kepada bisnis prosesnya. 
+
+# Catatan tambahan atau asumsi teknis:
+Saya menambahkan user role Staff yang dapat melakukan perubahan status, menerima notifikasi dan menambahkan komentar yang dapat dilakukan oleh Staff pada ID tiket yang sedang dikerjakannya, pertimbangan ini saya tambahkan karena ada proses assign tiket 
+oleh Admin kepada Staff IT.
+
+
+## ©️ Lisensi & Hak Cipta (Copyright)
+**Hak Cipta © 2026 Sendi Pradiansah. Semua Hak Dilindungi (All Rights Reserved).**
